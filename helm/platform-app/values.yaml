@@ -1,0 +1,23 @@
+# Global overrides
+flyte-core:
+  # Enable the bundled PostgreSQL (Not for production, but perfect for POC)
+  user-postgres:
+    enabled: true
+  
+  # Ensure the connection strings use the bundled service
+  storage:
+    type: minio
+    bucketName: "flyte-data"
+    s3:
+      endpoint: "http://mlops-platform-minio:9000"
+      accessKey: "minio"
+      secretKey: "miniostorage"
+      disableSSL: true
+
+  # Enable bundled MinIO if not present (Flyte core usually expects external or bundled)
+  # NOTE: flyte-core chart structure varies. "flyte-binary" is common, but here we used "flyte-core".
+  # Checking upstream, "fluency" or "flyte-core" often requires dependencies enabled.
+  # Let's try standard subchart enablement.
+  
+  # For flyte-core v1.10+, it often relies on external secrets/config.
+  # Let's try enabling the default dependency set if possible or just Postgres.
