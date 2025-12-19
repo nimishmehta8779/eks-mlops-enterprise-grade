@@ -9,10 +9,11 @@ dependencies:
   - name: argo-cd
     version: 5.51.6
     repository: https://argoproj.github.io/argo-helm
-  - name: kubeflow-pipelines
-    version: 0.1.0 # Placeholder
-    repository: file://../charts/kubeflow
-    condition: kubeflow.enabled
+  # Kubeflow Pipelines (Commented out: Requires complex setup not suitable for simple Helm dep)
+  # - name: kubeflow-pipelines
+  #   version: 2.0.3
+  #   repository: https://kubeflow.github.io/pipelines
+  #   condition: kubeflow.enabled
   - name: flyte-core
     version: v1.10.0
     repository: https://flyteorg.github.io/flyte
