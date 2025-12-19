@@ -16,8 +16,13 @@ minio:
   persistence:
     enabled: false # Ephemeral
 
+# DISABLE FLYTE (User Request to stabilize)
+flyte:
+  enabled: false
+
+# Deprecated config for enabled flyte
 flyte-core:
-  enabled: true
+  enabled: false
   # Tell Flyte to use our new Postgres
   db:
     host: platform-app-postgresql
@@ -43,9 +48,7 @@ kubeflow:
 kubeflow-pipelines:
   # Basic config to try and make it run without massive resources
   minio:
-    enabled: false # Use the shared one if possible, or let it deploy its own. 
-    # Actually, let's let KFP deploy its own MinIO/Postgres to avoid conflict, as wiring them together is complex.
-    # We have t3.xlarge nodes, we can handle it.
+    enabled: false # Use the shared one if possible.
   mysql:
     enabled: true
     persistence:
