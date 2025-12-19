@@ -1,6 +1,6 @@
 # Enabling Dependencies
 postgresql:
-  enabled: true
+  enabled: false
   auth:
     username: flyte
     password: flytepassword
@@ -10,7 +10,7 @@ postgresql:
       enabled: false # Ephemeral for 1-day POC (Fast & Cheap)
 
 minio:
-  enabled: true
+  enabled: false
   rootUser: minio
   rootPassword: miniostorage
   persistence:
@@ -43,13 +43,13 @@ flyte-core:
 
 # Enable Kubeflow
 kubeflow:
-  enabled: true
+  enabled: false
 
 kubeflow-pipelines:
   # Basic config to try and make it run without massive resources
   minio:
     enabled: false # Use the shared one if possible.
   mysql:
-    enabled: true
+    enabled: false
     persistence:
       enabled: false # Ephemeral
