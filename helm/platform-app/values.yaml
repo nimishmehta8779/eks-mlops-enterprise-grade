@@ -9,6 +9,9 @@ postgresql:
     persistence:
       enabled: false # Ephemeral for 1-day POC (Fast & Cheap)
 
+kserve:
+  enabled: false
+
 minio:
   enabled: false
   rootUser: minio
