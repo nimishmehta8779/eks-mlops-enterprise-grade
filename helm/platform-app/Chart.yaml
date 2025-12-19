@@ -20,7 +20,7 @@ dependencies:
     repository: https://charts.min.io/
     condition: minio.enabled
   - name: kubeflow-pipelines
-    version: 2.3.0
+    version: 1.10.0
     repository: https://getindata.github.io/helm-charts
     condition: kubeflow.enabled
   - name: flyte-core
