@@ -1,0 +1,23 @@
+apiVersion: v2
+name: platform-app
+description: Umbrella chart for MLOps Platform
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: argo-cd
+    version: 5.51.6
+    repository: https://argoproj.github.io/argo-helm
+  - name: kubeflow-pipelines
+    version: 0.1.0 # Placeholder
+    repository: file://../charts/kubeflow
+    condition: kubeflow.enabled
+  - name: flyte-core
+    version: v1.10.0
+    repository: https://flyteorg.github.io/flyte
+    condition: flyte.enabled
+  - name: kserve
+    version: 0.11.0
+    repository: https://kserve.github.io/kserve
+    condition: kserve.enabled
